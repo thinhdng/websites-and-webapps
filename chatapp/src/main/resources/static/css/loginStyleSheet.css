@@ -1,0 +1,44 @@
+h1{
+    font-family: 'Arial';
+    text-align: center;
+}
+
+h2{
+    font-family: "Arial";
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+main {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    background-color: beige; /* Background color */
+}
+
+/* Style for the form */
+#userAccountForm {
+    background: beige; /* Background color */
+    padding: 20px; /* Space inside the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    max-width: 400px; /* Maximum width */
+    width: 100%; /* Full width up to the max-width */
+    margin: auto;
+}
+
+#userAccountForm input{
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside the inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+    box-sizing: border-box;
+}
+
+#userAccountForm div{
+    margin-bottom: 15px;
+}
