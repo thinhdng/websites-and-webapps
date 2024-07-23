@@ -16,8 +16,12 @@ public class UsersService {
         return usersRepository.save(user);
     }
 
-    public Users getUserDetails(String username, String password){
-        Optional<Users> user = usersRepository.findByUsernameAndPassword(username, password);
+    public Users getUsername(String username){
+        Optional<Users> user = usersRepository.findByUsername(username);
         return user.orElse(null);
+    }
+
+    public boolean checkPassword(String password, Users user) {
+        return user != null && user.getPassword().equals(password);
     }
 }

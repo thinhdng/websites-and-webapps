@@ -8,10 +8,6 @@ h2{
     text-align: center;
 }
 
-.hidden {
-    display: none;
-}
-
 main {
     display: flex; /* Enable flexbox */
     justify-content: center; /* Center horizontally */
