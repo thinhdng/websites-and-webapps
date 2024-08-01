@@ -1,11 +1,19 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/chatStyleSheet.css">
+    <script src="/js/chatController.js" defer></script>
     <title>Chat</title>
 </head>
-
 <body>
-    <p>Page under construction!</p>
+    <h1>youre talking to</h1>
+    <div class="container">
+        <div class="messagesAreaBox"></div>
+        <div class="input-container">
+            <textarea class="userInputMessage" placeholder="Type your message here..." oninput="autoResize(this)"></textarea>
+            <button class="sendButton" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
 </body>
 </html>

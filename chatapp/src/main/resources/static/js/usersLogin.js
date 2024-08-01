@@ -29,9 +29,11 @@ function formatDate(date) {
     return `${year}/${month}/${day}`;
 }  
 
-function signUp(username, password, email) {
+async function signUp(username, password, email) {
     const date = new Date();
-    fetch("http://localhost:8080/login/addUser", {
+    
+    try{
+    const response = await fetch("http://localhost:8080/login/addUser", {
         method: "POST",
         body: JSON.stringify({
             username:username,
@@ -42,27 +44,43 @@ function signUp(username, password, email) {
         headers: {
           "Content-type": "application/json; charset=UTF-8"
         }
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+      });
+      if(response.status==409){
+        alert(`User already exist`);
+      }
+      window.location.href='chat';
+      alert(`Signed up successfully!`);
+    }catch (error){
+      console.error(error.message);
+    }
+
+
 }
 
 
-function signIn(username, password) {
-    const date = new Date();
-    fetch("http://localhost:8080/login/addUser", {
+async function signIn(username, password) {
+  try{
+    const response = await fetch("http://localhost:8080/login/auth", {
         method: "POST",
         body: JSON.stringify({
             username:username,
             password:password,
-            email:email,
-            created_at:formatDate(date)
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8"
         }
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+      });
+
+      if(response.status==404){
+        alert(`User does not exist - please sign up`);
+      }
+
+      if(response.status==401){
+        alert(`Incorrect password`);
+      }
+      window.location.href='chat';
+    }catch (error){
+      console.error(error.message);
+    }
 
 }

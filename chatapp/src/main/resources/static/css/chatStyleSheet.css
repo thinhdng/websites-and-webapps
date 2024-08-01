@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+}
+.messagesAreaBox {
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    border: 2px solid black; /* Visible border */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: #f9f9f9;
+    overflow: auto; /* Ensure scrolling if content overflows */
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    word-wrap: break-word; /* Break long words */
+    text-align: left; /* Ensure text is left-aligned */
+    border-radius: 10px; /* Round the corners with a 10px radius */
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.userInputMessage {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    border-radius: 10px; /* Apply the same rounding to user input area */
+    outline: none; /* Remove default outline on focus */
+    font-size: 16px; /* Adjust font size as needed */
+    overflow-y: auto; /* Ensure scrolling if content overflows vertically */
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sendButton {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid black;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    outline: none; /* Remove default outline on focus */
+}
+.sendButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

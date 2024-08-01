@@ -24,4 +24,8 @@ public class UsersService {
     public boolean checkPassword(String password, Users user) {
         return user != null && user.getPassword().equals(password);
     }
+
+    public boolean checkUsername(String username, Users user) {
+        return user != null && user.getUsername().equals(username);
+    }
 }

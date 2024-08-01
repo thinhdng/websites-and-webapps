@@ -19,11 +19,19 @@ public class UsersController {
     private UsersService usersService;
 
     @PostMapping("/addUser")
-    public Users addUserDetails(@RequestBody Users user){
-        return usersService.saveUserDetails(user);
+    public void addUserDetails(@RequestBody Users user){
+        Users userDetails = usersService.getUsername(user.getUsername());
+
+        /*response messages aren't necessary here, but helps with clarity 
+        when going back here
+        */
+        if(userDetails != null){
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "User already existed");
+        }else
+            usersService.saveUserDetails(user);
     }
 
-    @PostMapping(value="/auth")
+    @PostMapping("/auth")
     public void getUserDetails(@RequestBody Users user){
         Users userDetails = usersService.getUsername(user.getUsername());
 
