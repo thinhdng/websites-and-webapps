@@ -15,4 +15,12 @@ function sendMessage() {
     // Clear the textarea after sending the message
     document.querySelector('.userInputMessage').value = '';
     autoResize(document.querySelector('.userInputMessage'));
+    //notifies a message was sent, then resets the placeholder
+    document.getElementById("msgbox").placeholder = "sent!"
+    setTimeout(() =>{
+        document.getElementById("msgbox").placeholder = "Type your message here..."
+    }, 1000)
+    
+
 }
+
