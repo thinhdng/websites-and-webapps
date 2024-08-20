@@ -15,6 +15,18 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 
+//functionality with signing up added
+//clicking the register button will now show the fields for actually signing up
+document.getElementById("registerbutton").addEventListener('click',function(event){
+  var fields = document.getElementById("emailField");
+  fields.style.display = "block"
+  var signbutton = document.getElementById("signup");
+  signbutton.style.display = "block";
+  var reg = document.getElementById("registerbutton");
+  reg.style.display = "none"
+});
+
+
 function formatDate(date) {
     // Extract the year, month, and day from the date object
     const year = date.getFullYear();

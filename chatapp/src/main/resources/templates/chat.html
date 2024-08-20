@@ -2,18 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/chatStyleSheet.css">
-    <script src="/js/chatController.js" defer></script>
+    <link rel="stylesheet" href="../static/css/chatStyleSheet.css">
+    <script src="../static/js/chatController.js" defer></script>
     <title>Chat</title>
 </head>
 <body>
-    <h1>youre talking to</h1>
+    <h1 id="header">youre talking to</h1>
     <div class="container">
-        <div class="messagesAreaBox"></div>
-        <div class="input-container">
-            <textarea class="userInputMessage" placeholder="Type your message here..." oninput="autoResize(this)"></textarea>
-            <button class="sendButton" onclick="sendMessage()">Send</button>
+        <div id="areabox" class="messagesAreaBox"></div>
+        <div id="inputs"class="input-container">
+            <textarea id="msgbox" class="userInputMessage" placeholder="Type your message here..." oninput="autoResize(this)"></textarea>
+            <button id="send" class="sendButton" onclick="sendMessage()">Send</button>
         </div>
+    </div>
+    <div class = "miscellaneous" >
+        <button id="dark_mode" onclick="darkMode()">Dark Mode</button>
     </div>
 </body>
 </html>
