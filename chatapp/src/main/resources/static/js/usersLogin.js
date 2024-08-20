@@ -57,11 +57,15 @@ async function signUp(username, password, email) {
           "Content-type": "application/json; charset=UTF-8"
         }
       });
-      if(response.status==409){
-        alert(`User already exist`);
-      }
-      window.location.href='chat';
-      alert(`Signed up successfully!`);
+
+
+    if (response.status === 409) {
+        alert(`User already exists`);
+    } else if (response.redirected) {
+        alert(`Signed up successfully!`);
+        // Handle redirection if response includes a redirect URL
+        window.location.href = response.url;
+    }
     }catch (error){
       console.error(error.message);
     }
@@ -85,12 +89,14 @@ async function signIn(username, password) {
 
       if(response.status==404){
         alert(`User does not exist - please sign up`);
-      }
-
-      if(response.status==401){
+      } else if(response.status==401){
         alert(`Incorrect password`);
-      }
-      window.location.href='chat';
+      }  else if (response.redirected) {
+        alert(`Signed in successfully!`);
+        // Handle redirection if response includes a redirect URL
+        window.location.href = response.url;
+    }
+
     }catch (error){
       console.error(error.message);
     }

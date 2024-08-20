@@ -13,6 +13,7 @@ import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
+
 @Controller
 public class ChatController {
 
@@ -36,7 +37,6 @@ public class ChatController {
         messagingTemplate.convertAndSend("/topic/conversation/"+conversationId,chatMessage);
     }
 
-    @SuppressWarnings("null")
     @MessageMapping("/chat.addUser")
     public void addUser(@Payload String username, SimpMessageHeaderAccessor headerAccessor) {
         // Add username in WebSocket session
