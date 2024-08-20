@@ -7,13 +7,16 @@
     <title>Chat</title>
 </head>
 <body>
-    <h1>youre talking to</h1>
+    <h1 id="header">youre talking to</h1>
     <div class="container">
-        <div class="messagesAreaBox"></div>
-        <div class="input-container">
+        <div id="areabox" class="messagesAreaBox"></div>
+        <div id="inputs"class="input-container">
             <textarea id="msgbox" class="userInputMessage" placeholder="Type your message here..." oninput="autoResize(this)"></textarea>
-            <button class="sendButton" onclick="sendMessage()">Send</button>
+            <button id="send" class="sendButton" onclick="sendMessage()">Send</button>
         </div>
+    </div>
+    <div class = "miscellaneous" >
+        <button id="dark_mode" onclick="darkMode()">Dark Mode</button>
     </div>
 </body>
 </html>
